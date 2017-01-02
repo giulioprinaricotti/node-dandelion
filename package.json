@@ -1,7 +1,7 @@
 {
   "name": "dandelion-api",
   "version": "0.0.3",
-  "main": "dandelion.js",
+  "main": "./lib/dandelion.js",
   "description": "Unofficial Dandelion API JS",
   "dependencies": {
     "q": "^1.4.1",
