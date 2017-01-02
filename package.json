@@ -1,16 +1,16 @@
 {
-  "name": "node-dandelion",
+  "name": "dandelion-api",
   "version": "0.0.1",
   "description": "Unofficial Dandelion API JS",
   "main": "dandelion.js",
   "dependencies": {
     "q": "^1.4.1",
-    "request": "^2.79.0",
-    "swagger-js-codegen": "^1.7.11"
+    "request": "^2.79.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "swagger-js-codegen": "^1.7.11"
   },
   "scripts": {
     "test": "mocha --reporter spec"
