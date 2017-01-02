@@ -35,4 +35,8 @@ Dandelion.getEntities({'text': 'The brown fox and the doctor'})
 
 ## Contributing
 
-In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
+Here's a list of possible tasks that you might find interesting!
+
+ - Add more endpoints. See the [official documentation](https://dandelion.eu/docs/api) for inspiration
+ - Add the option to specify input language rather than rely on automatic detection
+ - Entity Extraction: allow to set additional options as per API documentation
