@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/giulioprinaricotti/node-dandelion.svg?branch=master)](https://travis-ci.org/giulioprinaricotti/node-dandelion)
 
+[![Coverage Status](https://coveralls.io/repos/github/giulioprinaricotti/node-dandelion/badge.svg?branch=master)](https://coveralls.io/github/giulioprinaricotti/node-dandelion?branch=master)
+
 #A nodejs client for the Dandelion API.
 =========
 
