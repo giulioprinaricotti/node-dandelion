@@ -5,11 +5,9 @@
 #A nodejs client for the Dandelion API.
 =========
 
-A small library that adds commas to numbers
-
 ## Installation
 
-  `npm install @gprinaricotti/node-dandelion`
+  `npm install dandelion-api`
 
 ## Usage
 
