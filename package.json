@@ -1,0 +1,20 @@
+{
+  "name": "node-dandelion",
+  "version": "0.0.1",
+  "description": "Unofficial Dandelion API JS",
+  "main": "dandelion.js",
+  "dependencies": {
+    "q": "^1.4.1",
+    "request": "^2.79.0",
+    "swagger-js-codegen": "^1.7.11"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "author": "Giulio Prina Ricotti",
+  "license": "ISC"
+}
