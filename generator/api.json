@@ -3,7 +3,7 @@
     "info": {
         "description": "Unofficial Dandelion NodeJS API",
         "version": "1.0.0",
-        "title": "Swagger Dandelion API",
+        "title": "Dandelion API",
         "termsOfService": "",
         "contact": {
             "email": "g.prinaricotti@gmail.com"
@@ -38,6 +38,30 @@
                         "description": "use \"text\" when you have plain text that doesn't need any pre-processing",
                         "type": "string",
                         "in": "query"
+                    },
+                    {
+                        "name": "url",
+                        "description": "use \"url\" when you have an URL and you want the Entity Extraction API to work on its main content; it will fetch the URL for you, and use an AI algorithm to extract the relevant part of the document to work on; in this case, the main content will also be returned by the API to allow you to properly use the annotation offsets;",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "name": "html",
+                        "description": "use \"html\" when you have an HTML document and you want the Entity Extraction API to work on its main content, similarly to what the \"url\" parameter does.",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "name": "url",
+                        "description": "use \"html_fragment\" when you have an HTML snippet and you want the Entity Extraction API to work on its content. It will remove all HTML tags before analyzing it.",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "name": "lang",
+                        "description": "The language of the text to be annotated; currently English, French, German, Italian and Portuguese are supported. Leave this parameter out to let the Entity Extraction API automatically detect the language for you.",
+                        "type": "string",
+                        "in": "query"
                     }
                 ],
                 "responses": {
@@ -47,10 +71,7 @@
                 },
                 "security": [
                     {
-                        "api_key": [
-                            "write:pets",
-                            "read:pets"
-                        ]
+                        "api_key": []
                     }
                 ]
             }
@@ -59,81 +80,24 @@
     "securityDefinitions": {
         "api_key": {
             "type": "apiKey",
-            "name": "api_key",
+            "name": "token",
             "in": "query"
         }
     },
     "definitions": {
-        "Pet": {
-            "type": "object",
-            "required": [
-                "name",
-                "photoUrls"
-            ],
-            "properties": {
-                "id": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "category": {
-                    "$ref": "#/definitions/Category"
-                },
-                "name": {
-                    "type": "string",
-                    "example": "doggie"
-                },
-                "photoUrls": {
-                    "type": "array",
-                    "xml": {
-                        "name": "photoUrl",
-                        "wrapped": true
-                    },
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "tags": {
-                    "type": "array",
-                    "xml": {
-                        "name": "tag",
-                        "wrapped": true
-                    },
-                    "items": {
-                        "$ref": "#/definitions/Tag"
-                    }
-                },
-                "status": {
-                    "type": "string",
-                    "description": "pet status in the store",
-                    "enum": [
-                        "available",
-                        "pending",
-                        "sold"
-                    ]
-                }
-            },
-            "xml": {
-                "name": "Pet"
-            }
-        },
-        "ApiResponse": {
+        "ApiResponseError": {
             "type": "object",
             "properties": {
-                "code": {
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "type": {
-                    "type": "string"
-                },
                 "message": {
                     "type": "string"
+                },
+                "code": {
+                    "type": "string"
+                },
+                "data": {
+                    "type": "object"
                 }
             }
         }
-    },
-    "externalDocs": {
-        "description": "Find out more about Swagger",
-        "url": "http://swagger.io"
     }
 }
