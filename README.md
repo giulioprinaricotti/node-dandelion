@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/giulioprinaricotti/node-dandelion.svg?branch=master)](https://travis-ci.org/giulioprinaricotti/node-dandelion)
+
 #A nodejs client for the Dandelion API.
 =========
 
