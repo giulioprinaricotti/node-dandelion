@@ -75,6 +75,61 @@
                     }
                 ]
             }
+        },
+        "/sent/v1": {
+            "get": {
+                "summary": "",
+                "description": "",
+                "operationId": "getSentiment",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "text",
+                        "description": "use \"text\" when you have plain text that doesn't need any pre-processing",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "name": "url",
+                        "description": "use \"url\" when you have an URL and you want the Entity Extraction API to work on its main content; it will fetch the URL for you, and use an AI algorithm to extract the relevant part of the document to work on; in this case, the main content will also be returned by the API to allow you to properly use the annotation offsets;",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "name": "html",
+                        "description": "use \"html\" when you have an HTML document and you want the Entity Extraction API to work on its main content, similarly to what the \"url\" parameter does.",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "name": "url",
+                        "description": "use \"html_fragment\" when you have an HTML snippet and you want the Entity Extraction API to work on its content. It will remove all HTML tags before analyzing it.",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "name": "lang",
+                        "description": "The language of the text to be annotated; currently only English and Italian are supported.",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Unauthorized. Missing token"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
         }
     },
     "securityDefinitions": {
